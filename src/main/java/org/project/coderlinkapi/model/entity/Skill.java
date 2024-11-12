@@ -12,7 +12,7 @@ public class Skill {
     private Integer id;
     @Column(name = "name", nullable = false, length = 20)
     private String name;
-    @Column(name = "description", nullable = false, length = 50)
+    @Column(name = "description", nullable = false, length = 100)
     private String description;
 
 }

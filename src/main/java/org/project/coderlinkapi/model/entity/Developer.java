@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "developer")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Developer extends User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

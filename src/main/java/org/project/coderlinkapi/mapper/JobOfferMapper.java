@@ -23,7 +23,7 @@ public class JobOfferMapper {
         JobOfferDetailsDTO jobOfferDetailsDTO =  modelMapper.map(jobOffer, JobOfferDetailsDTO.class);
 
         jobOfferDetailsDTO.setProjectName(jobOffer.getProject().getName());
-        jobOfferDetailsDTO.setCustomerName(jobOffer.getCustomer().getFirstname()+" "+jobOffer.getCustomer().getLastname());
+        jobOfferDetailsDTO.setCustomerName(jobOffer.getCustomer().getFirstName()+" "+jobOffer.getCustomer().getLastName());
 
 
         return jobOfferDetailsDTO;
@@ -41,7 +41,7 @@ public class JobOfferMapper {
     public JobOfferDetailsDTO toDetailsDto(JobOffer jobOffer) {
         JobOfferDetailsDTO jobofferDetailsDTO = modelMapper.map(jobOffer, JobOfferDetailsDTO.class);
         // Mapear manualmente el nombre del cliente concatenando firstName y lastName
-        jobofferDetailsDTO.setCustomerName(jobOffer.getCustomer().getFirstname() + " " + jobOffer.getCustomer().getLastname());
+        jobofferDetailsDTO.setCustomerName(jobOffer.getCustomer().getFirstName() + " " + jobOffer.getCustomer().getLastName());
         // Mapear manualmente el nombre del projecto
         jobofferDetailsDTO.setProjectName(jobOffer.getProject().getName());
         return jobofferDetailsDTO;

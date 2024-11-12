@@ -9,6 +9,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "customer")
+@PrimaryKeyJoinColumn(name = "cust_id")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Customer extends User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,13 +18,13 @@ public class Customer extends User {
     private Integer id;
 
     @Column(name = "first_name", nullable = false, length = 30)
-    private String firstname;
+    private String firstName;
 
     @Column(name = "dni", nullable = false, length = 8)
     private String dni;
 
     @Column(name = "last_name", nullable = false, length = 30)
-    private String lastname;
+    private String lastName;
 
     @Column(name = "description", nullable = false, length = 200)
     private String description;

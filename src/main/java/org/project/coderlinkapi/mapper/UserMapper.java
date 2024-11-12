@@ -30,8 +30,8 @@ public class UserMapper {
 
         // Si es cliente, asignar los datos de cliente
         if (user.getCustomer() != null) {
-            userProfileDTO.setFirstName(user.getCustomer().getFirstname());
-            userProfileDTO.setLastName(user.getCustomer().getLastname());
+            userProfileDTO.setFirstName(user.getCustomer().getFirstName());
+            userProfileDTO.setLastName(user.getCustomer().getLastName());
             userProfileDTO.setDescription(user.getCustomer().getDescription());
             if (user.getCustomer().getProjects() != null) {
                 userProfileDTO.setProjects(user.getCustomer().getProjects());
@@ -67,8 +67,8 @@ public class UserMapper {
 
         // Si es cliente, asignar los datos de cliente
         if (user.getCustomer() != null) {
-            authResponseDTO.setFirstName(user.getCustomer().getFirstname());
-            authResponseDTO.setLastName(user.getCustomer().getLastname());
+            authResponseDTO.setFirstName(user.getCustomer().getFirstName());
+            authResponseDTO.setLastName(user.getCustomer().getLastName());
         }
         // Si es desarrollador, asignar los datos de autor
         else if (user.getDeveloper() != null) {

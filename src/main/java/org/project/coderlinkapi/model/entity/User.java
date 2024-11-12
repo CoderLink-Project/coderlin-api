@@ -5,10 +5,12 @@ import lombok.Data;
 import org.project.coderlinkapi.model.enums.ERole;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
 @Table(name = "users")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,10 +26,10 @@ public class User {
     private String password;
 
     @Column(name="created_at")
-    private LocalDate createAt;
+    private LocalDateTime createAt;
 
     @Column(name = "updatedAt")
-    private LocalDate updatedAt;
+    private LocalDateTime updatedAt;
 
     // Relación uno a uno con Customer (si el usuario es cliente)
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

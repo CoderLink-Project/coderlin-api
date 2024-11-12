@@ -120,8 +120,8 @@ public class UserServiceImpl implements UserService {
         if (roleEnum == ERole.CUSTOMER) {
             // Crear un cliente
             Customer customer = new Customer();
-            customer.setFirstname(registrationDTO.getFirstName());
-            customer.setLastname(registrationDTO.getLastName());
+            customer.setFirstName(registrationDTO.getFirstName());
+            customer.setLastName(registrationDTO.getLastName());
             customer.setCreatedAt(LocalDateTime.now());
             customer.setUser(user);  // Enlazar el cliente con el usuario
             user.setCustomer(customer);
@@ -168,8 +168,8 @@ public class UserServiceImpl implements UserService {
 
         // Actualizar los campos específicos del perfil
         if (user.getCustomer() != null) {
-            user.getCustomer().setFirstname(userProfileDTO.getFirstName());
-            user.getCustomer().setLastname(userProfileDTO.getLastName());
+            user.getCustomer().setFirstName(userProfileDTO.getFirstName());
+            user.getCustomer().setLastName(userProfileDTO.getLastName());
         }
 
         if (user.getDeveloper() != null) {

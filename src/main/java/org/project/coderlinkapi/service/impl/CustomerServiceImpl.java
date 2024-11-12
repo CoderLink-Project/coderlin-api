@@ -75,8 +75,8 @@ public class CustomerServiceImpl implements CustomerService {
                 });
 
         // Actualizar los campos
-        customerFromDb.setFirstname(updateCustomerDTO.getFirstName());
-        customerFromDb.setLastname(updateCustomerDTO.getLastName());
+        customerFromDb.setFirstName(updateCustomerDTO.getFirstName());
+        customerFromDb.setLastName(updateCustomerDTO.getLastName());
         customerFromDb.setDescription(updateCustomerDTO.getDescription());
         customerFromDb.setNameCompany(updateCustomerDTO.getNameCompany());
         customerFromDb.setPhone(updateCustomerDTO.getPhone());
