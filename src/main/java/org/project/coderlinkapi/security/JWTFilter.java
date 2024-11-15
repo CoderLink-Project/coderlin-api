@@ -37,6 +37,12 @@ public class JWTFilter extends GenericFilterBean {
             return;
         }
 
+        // Permitir acceso a Swagger sin autenticación
+        if (requestPath.startsWith("/swagger-ui") || requestPath.startsWith("/v3/api-docs")) {
+            chain.doFilter(request, response);
+            return;
+        }
+
         // Obtener el token del encabezado Authorization
         String bearerToken = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION);
 
