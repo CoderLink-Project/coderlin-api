@@ -15,48 +15,54 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping("/api/v1/customers")
 @PreAuthorize("hasRole('ADMIN')")
+@RequiredArgsConstructor
 public class CustomerController {
 
     private final CustomerService customerService;
 
+    // Obtener todos los clientes
     @GetMapping
     public ResponseEntity<List<CustomerDTO>> listAll() {
         List<CustomerDTO> customers = customerService.getAll();
-        return new ResponseEntity<>(customers, HttpStatus.OK);
+        return ResponseEntity.ok(customers);
     }
 
+    // Obtener clientes paginados
     @GetMapping("/page")
-    public ResponseEntity<Page<CustomerDTO>> paginate(@PageableDefault(size = 5, sort = "firstName")
-                                                    Pageable pageable) {
+    public ResponseEntity<Page<CustomerDTO>> paginate(@PageableDefault(size = 5, sort = "firstName") Pageable pageable) {
         Page<CustomerDTO> page = customerService.paginate(pageable);
-        return new ResponseEntity<>(page, HttpStatus.OK);
+        return ResponseEntity.ok(page);
     }
 
+    // Crear un nuevo cliente
     @PostMapping
     public ResponseEntity<CustomerDTO> create(@Valid @RequestBody CustomerDTO customerDTO) {
         CustomerDTO createdCustomer = customerService.create(customerDTO);
-        return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdCustomer);
     }
 
+    // Obtener un cliente por ID
     @GetMapping("/{id}")
     public ResponseEntity<CustomerDTO> getById(@PathVariable Integer id) {
         CustomerDTO customer = customerService.findById(id);
-        return new ResponseEntity<>(customer, HttpStatus.OK);
+        return ResponseEntity.ok(customer);
     }
 
+    // Actualizar un cliente por ID
     @PutMapping("/{id}")
-    public ResponseEntity<CustomerDTO> update(@PathVariable Integer id,@Valid @RequestBody CustomerDTO customerDTO) {
+    public ResponseEntity<CustomerDTO> update(@PathVariable Integer id, @Valid @RequestBody CustomerDTO customerDTO) {
         CustomerDTO updatedCustomer = customerService.update(id, customerDTO);
-        return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
+        return ResponseEntity.ok(updatedCustomer);
     }
 
+    // Eliminar un cliente por ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         customerService.delete(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.noContent().build();
     }
 }
+

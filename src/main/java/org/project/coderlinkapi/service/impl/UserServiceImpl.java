@@ -44,9 +44,8 @@ public class UserServiceImpl implements UserService {
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
     private final UserMapper userMapper;
-
-    private final AuthenticationManager authenticationManager; // Necesario para la autenticación
-    private final TokenProvider tokenProvider; // Necesario para la creación de tokens JWT
+    private final AuthenticationManager authenticationManager;
+    private final TokenProvider tokenProvider;
 
     @Transactional
     @Override

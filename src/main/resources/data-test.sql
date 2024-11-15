@@ -24,20 +24,20 @@
 --('Desarrollo de una plataforma de e-commerce', 5000.00, 30, '2024-09-01', '2024-09-10', 1, 6);
 
 -- Tabla Skill
-INSERT INTO skill (name, description) VALUES
-                                          ('Java', 'Lenguaje de programaciÃ³n orientado a objetos'),
-                                          ('Spring Boot', 'Framework para el desarrollo de aplicaciones web en Java');
+--INSERT INTO skill (name, description) VALUES
+                                         -- ('Java', 'Lenguaje de programaciÃ³n orientado a objetos'),
+                                         -- ('Spring Boot', 'Framework para el desarrollo de aplicaciones web en Java');
 
 -- Tabla skills_project (relaciÃ³n entre proyecto y habilidades)
-INSERT INTO skills_project (skill_id, project_id) VALUES
-                                                      (1, 6),  -- Relaciona una habilidad con un proyecto
-                                                      (2, 6);  -- Otra relaciÃ³n de habilidad con el mismo proyecto
+--INSERT INTO skills_project (skill_id, project_id) VALUES
+                                                   --   (1, 6),  -- Relaciona una habilidad con un proyecto
+                                                   --   (2, 6);  -- Otra relaciÃ³n de habilidad con el mismo proyecto
 
 
 -- Tabla postulations (Postulaciones de los desarrolladores a ofertas)
-INSERT INTO postulations (status, postulation_date, description, developer_id) VALUES
- ('Pending', '2024-09-20 14:30:00', 'PostulaciÃ³n para nuevo proyecto', 2);
+--INSERT INTO postulations (status, postulation_date, description, developer_id) VALUES
+ --'Pending', '2024-09-20 14:30:00', 'PostulaciÃ³n para nuevo proyecto', 2);
 
 -- Tabla payment
-INSERT INTO payment (transaction_date, total, total_date, payment_method, facturation, created_at, updated_at, project_id, customer_id) VALUES
-('2024-09-01 10:00:00', 1500.00, '2024-09-01 10:00:00', 'Credit Card', 'Invoice #001', '2024-09-01 10:00:00', '2024-09-10 15:00:00', 6, 1);
+--INSERT INTO payment (transaction_date, total, total_date, payment_method, facturation, created_at, updated_at, project_id, customer_id) VALUES
+--('2024-09-01 10:00:00', 1500.00, '2024-09-01 10:00:00', 'Credit Card', 'Invoice #001', '2024-09-01 10:00:00', '2024-09-10 15:00:00', 6, 1);
